@@ -3,7 +3,8 @@ from PIL import Image
 import pytesseract
 
 def image_to_text(image):
-    pytesseract.pytesseract.tesseract_cmd = r'C:\Users\yhou\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
+    # pytesseract.pytesseract.tesseract_cmd = r'C:\Users\yhou\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
+    # pytesseract.pytesseract.tesseract_cmd = r'C:\Users\yhou\OneDrive - CAF, Inc\Yulin Hou\Python_code\Streamlit_app_pic2text\tesseract.exe'
     return pytesseract.image_to_string(image)
 
 
@@ -12,7 +13,7 @@ def main():
     # Streamlit UI
 
     st.set_page_config(page_title="PIC Convert", page_icon="⚡" )
-    st.title("Welcome to MyCAF PDF Convert!")
+    st.title("Welcome to MyCAF PIC Convert!")
     st.write("Upload an image to extract text:")
 
     # File uploader widget
