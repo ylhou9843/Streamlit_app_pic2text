@@ -12,7 +12,7 @@ import os
 #     return pytesseract.image_to_string(image)
 
 def image_to_text(image):
-    # Check if Tesseract is already installed (streamlit cloud environment)
+    # For Linux (Streamlit Cloud environment), use the Tesseract binary from the 'bin' folder
     if os.name == 'posix':  # For Linux (Streamlit Cloud environment)
         tesseract_path = './bin/tesseract'  # Path to the tesseract binary in your project directory
     elif os.name == 'nt':  # For Windows (local development)
@@ -25,7 +25,6 @@ def image_to_text(image):
     pytesseract.pytesseract.tesseract_cmd = tesseract_path
 
     return pytesseract.image_to_string(image)
-
 
 
 
