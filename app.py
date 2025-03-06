@@ -14,6 +14,7 @@ import os
 def image_to_text(image):
     # For Linux (Streamlit Cloud environment), use the Tesseract binary from the 'bin' folder
     if os.name == 'posix':  # For Linux (Streamlit Cloud environment)
+        print('!!!!')
         tesseract_path = './bin/tesseract'  # Path to the tesseract binary in your project directory
     elif os.name == 'nt':  # For Windows (local development)
         tesseract_path = r'C:\Users\yhou\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
