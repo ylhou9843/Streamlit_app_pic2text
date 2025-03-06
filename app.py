@@ -10,7 +10,7 @@ import os
 #     return pytesseract.image_to_string(image)
 
 def image_to_text(image):
-<<<<<<< HEAD
+
     # For Streamlit Cloud (Linux environment), use the following path
     if not os.path.isfile('/usr/bin/tesseract'):
         os.system('apt-get update')
@@ -23,11 +23,10 @@ def image_to_text(image):
     if os.name == 'nt':
         pytesseract.pytesseract.tesseract_cmd = r'C:\Users\yhou\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
     
-=======
     # pytesseract.pytesseract.tesseract_cmd = r'C:\Users\yhou\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
-    pytesseract.pytesseract.tesseract_cmd = r'\usr\bin\tesseract'
+    # pytesseract.pytesseract.tesseract_cmd = r'\usr\bin\tesseract'
     # pytesseract.pytesseract.tesseract_cmd = r'https://github.com/ylhou9843/Streamlit_app_pic2text/blob/0c48e12f80f2f9ff0a233f32adb2001f722bbe57/tesseract.exe'
->>>>>>> d63693794eaf33acd34e65a9be1998b79e309983
+
     return pytesseract.image_to_string(image)
 
 
@@ -35,8 +34,8 @@ def image_to_text(image):
 def main():
     # Streamlit UI
 
-    st.set_page_config(page_title="PIC Convert", page_icon="⚡" )
-    st.title("Welcome to MyCAF PIC Convert!")
+    st.set_page_config(page_title="PIC Converter", page_icon="⚡" )
+    st.title("Welcome to MyCAF PIC Converter!")
     st.write("Upload an image to extract text:")
 
     # File uploader widget
