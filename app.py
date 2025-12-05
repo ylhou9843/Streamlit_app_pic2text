@@ -19,7 +19,7 @@ def main():
 
     st.set_page_config(page_title="PIC Converter", page_icon="⚡" )
     st.title("Welcome to MyCAF PIC Converter!")
-    st.write("Upload an image to extract text:")
+    st.write("Upload image to extract text:")
 
     # File uploader widget
     # uploaded_image = st.file_uploader("Choose an image...", type=["png", "jpg", "jpeg"])
@@ -40,17 +40,6 @@ def main():
             st.subheader(f"Extracted Text from Image {idx}:")
             st.write(text)
 
-    # if uploaded_image is not None:
-    #     # Open and display the uploaded image
-    #     image = Image.open(uploaded_image)
-    #     st.image(image, caption="Uploaded Image", use_container_width=True)
-
-    #     # Extract text from image
-    #     text = image_to_text(image)
-
-    #     # Display the extracted text
-    #     st.subheader("Extracted Text:")
-    #     st.write(text)
 
 # Call main function
 if __name__ == "__main__":
