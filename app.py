@@ -31,13 +31,13 @@ def main():
             
             # Open and display image
             image = Image.open(uploaded_image)
-            st.image(image, caption=f"Uploaded Image {idx}", use_container_width=True)
+            # st.image(image, caption=f"Uploaded Image {idx}", use_container_width=True)
 
             # Extract text
             text = image_to_text(image)
 
             # Display output
-            st.subheader(f"Extracted Text from Image {idx}:")
+            # st.subheader(f"Extracted Text from Image {idx}:")
             st.write(text)
 
 
