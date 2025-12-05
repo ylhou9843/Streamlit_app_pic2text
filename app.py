@@ -22,19 +22,35 @@ def main():
     st.write("Upload an image to extract text:")
 
     # File uploader widget
-    uploaded_image = st.file_uploader("Choose an image...", type=["png", "jpg", "jpeg"])
+    # uploaded_image = st.file_uploader("Choose an image...", type=["png", "jpg", "jpeg"])
+    uploaded_images = st.file_uploader("Choose image(s)...", type=["png", "jpg", "jpeg"],accept_multiple_files=True)
 
-    if uploaded_image is not None:
-        # Open and display the uploaded image
-        image = Image.open(uploaded_image)
-        st.image(image, caption="Uploaded Image", use_container_width=True)
+    if uploaded_images:
+        for idx, uploaded_image in enumerate(uploaded_images, start=1):
+            st.markdown(f"### Image {idx}")
+            
+            # Open and display image
+            image = Image.open(uploaded_image)
+            st.image(image, caption=f"Uploaded Image {idx}", use_container_width=True)
 
-        # Extract text from image
-        text = image_to_text(image)
+            # Extract text
+            text = image_to_text(image)
 
-        # Display the extracted text
-        st.subheader("Extracted Text:")
-        st.write(text)
+            # Display output
+            st.subheader(f"Extracted Text from Image {idx}:")
+            st.write(text)
+
+    # if uploaded_image is not None:
+    #     # Open and display the uploaded image
+    #     image = Image.open(uploaded_image)
+    #     st.image(image, caption="Uploaded Image", use_container_width=True)
+
+    #     # Extract text from image
+    #     text = image_to_text(image)
+
+    #     # Display the extracted text
+    #     st.subheader("Extracted Text:")
+    #     st.write(text)
 
 # Call main function
 if __name__ == "__main__":
