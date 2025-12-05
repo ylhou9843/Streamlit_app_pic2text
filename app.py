@@ -27,7 +27,7 @@ def main():
 
     if uploaded_images:
         for idx, uploaded_image in enumerate(uploaded_images, start=1):
-            st.markdown(f"### Image {idx}")
+            st.markdown(f"### {uploaded_image.name}")
             
             # Open and display image
             image = Image.open(uploaded_image)
